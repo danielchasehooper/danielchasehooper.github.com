@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <title>Produce.</title>
+    <style>
+        * { 
+            font-family: rosario, "Gil Sans", sans-serif;   
+         }
+        body {
+            background-color:#222;
+            color:#ddd;
+            margin:0; padding:0;
+        }
+        #theCanvas {
+            margin:auto; 
+            position: relative; 
+            top: 0;bottom: 0; left: 0;right: 0;
+            display: block; 
+            max-width:100vw;
+            max-height:100vh;
+        }
+        .pad {
+            padding:15px
+        }
+        .disable-selection {
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+        .centered {
+            width:608px;
+            max-width: 90%;
+            margin:auto;
+        }
+        #spoilergap {
+            background: repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 20px,
+              #444 20px,
+              #444 40px
+              );
+            width:100%;
+            height:150vh;
+            text-align:center;
+            padding-top: 15px;
+            /*text-shadow: #FFC300 0 0 10px;*/
+            color:white;
+            text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pad centered">
+        <h1>Produce.</h1>
+        <h4>June 23, 2019</h4>
+        <p>A game about how I've been feeling lately. To move, swipe on the green area or use your keyboard's arrow keys.</p>
+        <p></p>
+    </div>
+    <canvas id="theCanvas" class="disable-selection"></canvas>
+    
+    <!--<div class="pad centered">
+        <h3>Creator's Statement</h3>
+        <p>Your interpritation of Produce is more important than my intention, please play it before reading further.</p>
+
+        <div id="spoilergap">Spoiler Free Zone</div>
+
+        <p>I haven't been sleeping well lately. </p>
+
+        <p>
+            Produce is my attempt to make a game that could manifest my feelings in anyone that played it. It wasn't enough for my players to simply experience frustration, overwhelm, desperation, and confusion – lots of games create those feelings. More subtly, I wanted players to feel those things as a result of their own actions. The sense of responsibility creates a diabolic dynamic where you stay in chaos because you might be able to control it. 
+        </p>
+
+        <p>
+            The "art" is intentionally abstract. This avoids any element being pinned to one meaning, like "Yellow squares are money!" (they're not). As a result, players can form a variety of interpritations. There are more athetic ways to abtract, but much of the meaning is not in the visuals, but in the emergent behaviour of the system.
+        </p>
+
+        <p>
+            Eventually you many ask "How do I win?" (You can't). "What's in this for me?" (Not much). "Why am I doing this?" (Idk, go outside).
+        </p>
+
+        <img src="sccott_representation.png">
+
+        <p>If you like this, you should check out <a href="http://hcsoftware.sourceforge.net/passage/">Passage by Jason Rohrer</a>, and .</p>
+        
+    </div>-->
+
+
+    <script src="base.js?sdf=45"></script>
+    <script type="text/javascript">
+        "use strict";
+
+        const width = 608;
+        const height = 608;
+
+        const cellWidth = 32;
+        let px=6, py = 9;
+
+
+        let wasRightPRessed = false;
+        let wasUpRessed = false;
+        let wasLeftRessed = false;
+        let wasDownRessed = false;
+
+        let points=0;
+
+        const mapSize = 19;
+        let map = [
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+        ];
+
+// 0 grass
+// 1-64 sapling
+// 65-200 adult
+// 200-1000 dying adult
+
+const grass = 0;
+const sapling = 1;
+const adult = 190;
+const dying = 400;
+const dead = 1000;
+
+const subtractInterval = 115;
+
+function plant(x, y) {
+    if (x < 0 || x >= mapSize || y< 0 || y>= mapSize) return;
+
+    let index = x+y*mapSize;
+
+    if (map[index] == grass) {
+        map[index] = sapling;
+    }
+}
+
+const moveDelayLimit = 20;
+var moveDelay = 1;
+var newPlantTimer = 0;
+
+var dirLeft = 1;
+var dirRight = 2;
+var dirUp = 3;
+var dirDown = 4;
+
+var employeeMoveTimer = 0;
+
+function mapAt(x, y) {
+    if (x < 0 || x > mapSize || y< 0 || y>= mapSize) return -1;
+    return map[x+y*mapSize];
+}
+
+
+function harvest(x, y) {
+    let val = map[y*mapSize+x];
+    if (val > adult && val < dead) {
+        points+=4;
+        plant(x+1, y);
+        plant(x-1, y);
+        plant(x, y-1);
+        plant(x, y+1);
+
+        if (Math.random()*2 > 1) plant(x+1, y+1);
+        if (Math.random()*2 > 1) plant(x-1, y-1);
+        if (Math.random()*2 > 1) plant(x+1, y-1);
+        if (Math.random()*2 > 1) plant(x-1, y+1);
+    }
+    map[y*mapSize+x] = 0;
+}
+
+const greenColor = color(10, 107, 26);
+const brownColor = color(66, 47, 8);
+const flashColor = color(255, 0, 0);
+
+function animate()
+{
+
+    // input ////////////////////////////////
+
+    if (isKeyPressed(39) && (!wasKeyPressed(39) || moveDelay >= moveDelayLimit) && px < mapSize-1) { 
+        px+=1;
+        moveDelay = 0;
+    } else if (isKeyPressed(37) && (!wasKeyPressed(37) || moveDelay >= moveDelayLimit)&& px >0) { 
+        px-=1;
+        moveDelay = 0;
+    } else if (isKeyPressed(40) && (!wasKeyPressed(40) || moveDelay >= moveDelayLimit)&& py< mapSize-1) { 
+        py+=1;
+        moveDelay = 0;
+    } else if (isKeyPressed(38) && (!wasKeyPressed(38) || moveDelay >= moveDelayLimit) && py > 0) { 
+        py-=1;
+        moveDelay = 0;
+    }
+
+    if (moveDelay == 0) {
+        harvest(px, py);
+    }
+
+    moveDelay++;
+
+
+    // clear screen ///////////////////////////////////////
+
+    fill(71, 150, 72);
+    rect(0, 0, width, height);
+
+    // update & draw plants /////////////////////////////////////////
+    fill(10, 107, 26);
+
+    for (let y=0; y < mapSize; y++) {
+        for (let x=0; x < mapSize; x++) {
+            let index = y*mapSize+x;
+            let val = map[index];
+            if (val != grass) {
+                newPlantTimer = 0;
+
+                let growthProgress = Math.min(1, val/adult);
+                let drawSize = Math.floor(growthProgress*growthProgress * (cellWidth-5))+4;
+
+                let dyingColor = lerpColor(greenColor, brownColor, (val-adult)/dead);
+                if (val > dying) {
+
+                    if (val >= dead) {
+                        fill(0,0,0);
+                        drawSize =  20;
+                        dyingColor = color(0,0,0);
+                    }
+
+                    const progress = (Math.floor(val % subtractInterval)/(subtractInterval)) * 7;
+                    if (progress == 0) points--;
+
+                    fill(lerpColor(flashColor, dyingColor, progress));
+                } else if (val > adult) {
+                    fill(dyingColor);
+                } else {
+                    fill(127,164,44);
+                }
+
+                map[index]++;
+                
+                ellipse(x*cellWidth+cellWidth/2, y*cellWidth+cellWidth-drawSize/2-2, drawSize, drawSize);
+            }
+        }
+    }
+    if (points < 0) points=0;
+
+    // draw Player ////////////////////////////////////
+
+    fill(189, 26, 47);
+    rect(px*cellWidth+1+DHLib.swipeOffsetX/4, py*cellWidth+1+DHLib.swipeOffsetY/4, cellWidth-2, cellWidth-2);
+
+
+    // draw points
+    fill(255,195,0);
+    for (let i=0; i < points; i++) {
+        rect(Math.floor(i%27)*22+9, Math.floor(i/27)*22+9, 7, 7);
+    }
+
+    newPlantTimer++;
+    if (newPlantTimer > 200) {
+        plant(Math.floor(Math.random()*mapSize), Math.floor(Math.random()*mapSize));
+    } 
+
+}
+
+size(width, height);
+
+</script>
+<script src="https://use.edgefonts.net/rosario.js"></script>
+</body>
+</html>
