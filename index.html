@@ -70,9 +70,22 @@
 
         .entry {
             margin-bottom:20px;
+            position:relative;
         }
 
-        .entry img {
+        .img_container {
+            position: relative;
+            width:100%; 
+            padding-top:100%;
+            height:0;
+        }
+
+        .img_container img {
+            position:absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
             width:100%;
         }
 
@@ -95,77 +108,85 @@
     <h1 class="text-center">Daniel Hooper</h1>
     <div class="text-center mb"><a href="http://twitter.com/danielchooper">Twitter</a></div>
     <div class="container mb">
-        <div class="row mb">
+        <!-- <div class="row mb">
             <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
                <p>I aim to make things that improve creatives' joy and productivity. I'm currently working on <a href="https://principleformac.com" class="end">Principle.</a> Before that I worked on photography apps&nbsp;at&nbsp;Apple. </p>
            </div>
-       </div>
+       </div> -->
 
        <div class="row">
-        <!-- <div class="col-xs-12 col-sm-offset-1"><h2>Recent</h2></div> -->
         <a href="produce/" class="noLinkSym">
             <div class="entry col-md-4 col-xs-6">
-               <img src="images/produceThumb.png"/>
-               <h4>Produce</h4>
-               <div>2019/6/23</div>
-               <div class="platform">HTML5</div>
-           </div>
-       </a>
-       <a href="http://principleformac.com" class="noLinkSym">
+             <div class='img_container'><img src="images/produceThumb.png"/></div>
+             <h4>Produce</h4>
+             <div>2019/6/23</div>
+             <div class="platform">Web</div>
+         </div>
+     </a>
+     <a href="http://principleformac.com" class="noLinkSym">
         <div class="entry col-md-4 col-xs-6">
-           <img src="images/principleThumb.jpg"/>
-           <h4>Principle</h4>
-           <div>2015</div>
-           <div class="platform">macOS</div>
-       </div>
-   </a>
-   <a href="greenline/" class="noLinkSym">
-        <div class="entry col-md-4 col-xs-6">
-           <img src="images/greenlineThumb.png"/>
-           <h4>Green Line</h4>
-           <div>2014</div>
-           <div class="platform">HTML5</div>
-       </div>
-   </a>
+         <div class='img_container'><img src="images/principleThumb2.jpg"/></div>
+         <h4>Principle</h4>
+         <div>2015</div>
+         <div class="platform">macOS</div>
+     </div>
+ </a>
+ <a href="greenline/" class="noLinkSym">
+    <div class="entry col-md-4 col-xs-6">
+     <div class='img_container'><img src="images/greenlineThumb.png"/></div>
+     <h4>Green Line</h4>
+     <div>2014</div>
+     <div class="platform">Web</div>
+ </div>
+</a>
 
-   <a href="codebook/" class="noLinkSym">
-        <div class="entry col-md-4 col-xs-6">
-           <img src="images/codebookThumb.png"/>
-           <h4>Codebook</h4>
-           <div>2012</div>
-           <div class="platform">HTML5</div>
-       </div>
-   </a>
+<a href="https://www.apple.com/macos/photos/" class="noLinkSym">
+    <div class="entry col-md-4 col-xs-6">
+     <div class='img_container'><img src="images/photosThumb.png"/></div>
+     <h4>Apple Photography</h4>
+     <div>2013</div>
+     <div class="platform">iOS, macOS</div>
+ </div>
+</a>
 
-   <a href="https://youtu.be/RGQTaHGQ04Q" class="noLinkSym">
-        <div class="entry col-md-4 col-xs-6">
-           <img src="images/keyboardThumb.png"/>
-           <h4>iPad Keyboard</h4>
-           <div>2012</div>
-           <div class="platform">iOS</div>
-       </div>
-   </a>
+<a href="codebook/" class="noLinkSym">
+    <div class="entry col-md-4 col-xs-6">
+     <div class='img_container'><img src="images/codebookThumb.png"/></div>
+     <h4>Codebook</h4>
+     <div>2012</div>
+     <div class="platform">Web</div>
+ </div>
+</a>
+
+<a href="https://youtu.be/RGQTaHGQ04Q" class="noLinkSym">
+    <div class="entry col-md-4 col-xs-6">
+     <div class='img_container'><img src="images/keyboardThumb.png"/></div>
+     <h4>Keyboard Gestures</h4>
+     <div>2012</div>
+     <div class="platform">Video</div>
+ </div>
+</a>
 
 
 
-       <a href="https://apps.apple.com/us/app/percepto/id419502225" class="noLinkSym">
-        <div class="entry col-md-4 col-xs-6">
-           <img src="images/perceptoThumb.jpg"/>
-           <h4>Percepto</h4>
-           <div>2011</div>
-           <div class="platform">iOS</div>
-       </div>
-   </a>
+<a href="https://apps.apple.com/us/app/percepto/id419502225" class="noLinkSym">
+    <div class="entry col-md-4 col-xs-6">
+     <div class='img_container'><img src="images/perceptoThumb.jpg"/></div>
+     <h4>Percepto</h4>
+     <div>2011</div>
+     <div class="platform">iOS</div>
+ </div>
+</a>
 </div>
 </div>
 
 <div class="container mb">
     <div class="row">
-       <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
-           <h3>Favorite Books</h3>
-           <p>These books deeply influenced my work and I hope more people read them. (In no&nbsp;particular&nbsp;order)</p>
+     <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
+         <h3>Favorite Books</h3>
+         <p>These books deeply influenced my work and I hope more people read them. (In no&nbsp;particular&nbsp;order)</p>
 
-           <ul class="spacedList">
+         <ul class="spacedList">
             <li><a href="https://www.amazon.com/dp/9332573905"><book>Computer Systems: A Programmers Perspective 3rd Ed.</book></a> By Randal&nbsp;Bryant and David&nbsp;O'Hallaron</li>
             <li><a href="http://amazon.com/dp/0262011530"><book>Structure and Interpretation of Computer Programs 2nd Ed.</book></a> By Harold&nbsp;Abelson and Gerald&nbsp;Jay&nbsp;Sussman</li>
             <li><a href="http://amazon.com/dp/0961392142"><book>The Visual Display of Quantitative Information</book></a> By Edward&nbsp;R.&nbsp;Tufte</li>
@@ -183,8 +204,8 @@
         </ul>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
-     <h3>Favorite Experiences</h3>
-     <ul class="spacedList">
+       <h3>Favorite Experiences</h3>
+       <ul class="spacedList">
         <li><a href="http://edithfinch.com">What Remains of Edith Finch</a></li>
         <li><a href="https://www.stephenssausageroll.com">Steven's Sausage Roll</a></li>
         <li><a href="http://the-witness.net">The Witness</a></li>
