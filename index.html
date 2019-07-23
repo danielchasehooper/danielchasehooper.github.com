@@ -4,118 +4,201 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="avatar.jpg">
+    <link rel="icon" href="images/avatar.jpg">
 
     <title>Daniel Hooper</title>
 
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <style type="text/css">
 
-    * {
-        font-family: rosario, "Gil Sans", sans-serif;        
-    }
+        * {
+            font-family: rosario, "Gil Sans", sans-serif;        
+        }
 
-    body {
-        background-color:#fcfafb; color:#222;
-        font-size:18px;
-    }
+        body {
+            background-color:#fcfafb; color:#222;
+            font-size:18px;
+        }
 
-    .spacedList li {margin-bottom:0.4em; list-style-type: square;}
+        .spacedList li {margin-bottom:0.4em; list-style-type: square;}
 
-    book { font-style: italic; }
+        book { font-style: italic; }
 
-    a {
-        text-decoration: none;
-        color:inherit;
-        transition-property: background, box-shadow;
-        transition-duration: 0.1s;
-    }
+        a {
+            text-decoration: none;
+            color:inherit;
+            transition-property: background, box-shadow;
+            transition-duration: 0.1s;
+        }
 
-    a::after {
-        content:"°";
-        color:#c44;
-        margin-left:-0.0em;
-        font-size:1em;
-        top:-0.1em;
-        position:relative;
-    }
+        a::after {
+            content:"°";
+            color:#c44;
+            margin-left:-0.0em;
+            font-size:1em;
+            top:-0.1em;
+            position:relative;
+        }
 
-    a.noLinkSym::after {
-        content:"";
-    }
+        a.noLinkSym::after {
+            content:"";
+        }
 
-    a.end::after {
-        margin-left:-0.10em;
-        margin-right:-0.0em;
-    }
+        a.end::after {
+            margin-left:-0.10em;
+            margin-right:-0.0em;
+        }
 
-    a:hover {
-        text-decoration: none;
-        color:inherit;
-        background-color: rgba(255,0,0,0.1);
-        border-radius: 1px;
-        box-shadow: 0 0 0 2px rgba(255,0,0,0.1);;
-    }
+        a:hover {
+            text-decoration: none;
+            color:inherit;
+            background-color: rgba(255,0,0,0.1);
+            border-radius: 1px;
+            box-shadow: 0 0 0 2px rgba(255,0,0,0.1);;
+        }
 
-    .avatar {
-        border-radius: 115px;  
-        width:230px;
-        margin: auto;
-        display:block;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
+        .avatar {
+            border-radius: 115px;  
+            width:230px;
+            margin: auto;
+            display:block;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
 
-    h1 {margin-bottom:1em;}
-</style>
+        h1 {margin-bottom:0em;}
 
-<script src="https://use.edgefonts.net/lato;rosario.js"></script>
+        .entry {
+            margin-bottom:20px;
+        }
+
+        .entry img {
+            width:100%;
+        }
+
+        .entry .platform {
+            color:#777;
+        }
+
+        .mb {
+            margin-bottom:50px;
+        }
+
+    </style>
+
+    <script src="https://use.edgefonts.net/lato;rosario.js"></script>
 
 </head>
 <body>
-    <img src="avatar.jpg" class="avatar"/>
-    <div><h1 class="text-center">Daniel Hooper</h1></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
-               <p>I aim to make tools that dramatically improve creatives' joy and productivity. I'm currently working on <a href="https://principleformac.com" class="end">Principle.</a> Before that I worked on photography apps&nbsp;at&nbsp;Apple.</p>
-           </div>
-           <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
-               <h3>Favorite Books</h3>
-               <p>These books deeply influenced my work and I hope more people read them. (In no&nbsp;particular&nbsp;order)</p>
+    <img src="images/avatar.jpg" class="avatar"/>
 
-               <ul class="spacedList">
-                <li><a href="https://www.amazon.com/dp/9332573905"><book>Computer Systems: A Programmers Perspective 3rd Ed.</book></a> By Randal&nbsp;Bryant and David&nbsp;O'Hallaron</li>
-                <li><a href="http://amazon.com/dp/0262011530"><book>Structure and Interpretation of Computer Programs 2nd Ed.</book></a> By Harold&nbsp;Abelson and Gerald&nbsp;Jay&nbsp;Sussman</li>
-                <li><a href="http://amazon.com/dp/0961392142"><book>The Visual Display of Quantitative Information</book></a> By Edward&nbsp;R.&nbsp;Tufte</li>
-                <li><a href="https://www.amazon.com/dp/006097625X"><book>Understanding Comics: The Invisible Art</book></a> By Scott&nbsp;McCloud</li>
-                <li><a href="https://www.amazon.com/dp/9056995006"><book>The Art of Doing Science and Engineering</book></a> By Richard&nbsp;W.&nbsp;Hamming</li>
-                <li><a href="https://www.amazon.com/dp/0262560992"><book>The Little Schemer</book></a> By Daniel P. Friedman and Matthias&nbsp;Felleisen</li>
-                <li><a href="https://www.amazon.com/dp/086547897X"><book>The Animator's Survival Kit</book></a> By Richard&nbsp;Williams</li>
-                <li><a href="https://www.amazon.com/dp/1118766571"><book>About Face: The Essentials of Interaction Design</book></a> By&nbsp;Alan&nbsp;Cooper</li>
-                <li><a href="https://www.amazon.com/dp/0262640686"><book>The Elements of Computing Systems</book></a> by Noam&nbsp;Nisan</li>
-                <li><a href="https://www.amazon.com/dp/0060850523"><book>Brave New World</book></a> By Aldous Huxley</li>
-                <li><a href="https://practicaltypography.com"><book>Butterick's Practical Typography</book></a> By Matthew&nbsp;Butterick</li>
-                <li><a href="http://amazon.com/dp/0672326140"><book>The Inmates are Running the Asylum</book></a> By Alan&nbsp;Cooper</li>
-                <li><a href="http://amazon.com/dp/0201379376"><book>The Humane Interface</book></a> By Jef Raskin</li>
-                <li><a href="https://www.amazon.com/dp/0782115381"><book>The Elements of Friendly Software Design</book></a> By Paul&nbsp;Heckel</li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
-           <h3>Favorite Experiences</h3>
+    <h1 class="text-center">Daniel Hooper</h1>
+    <div class="text-center mb"><a href="http://twitter.com/danielchooper">Twitter</a></div>
+    <div class="container mb">
+        <div class="row mb">
+            <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
+               <p>I aim to make things that improve creatives' joy and productivity. I'm currently working on <a href="https://principleformac.com" class="end">Principle.</a> Before that I worked on photography apps&nbsp;at&nbsp;Apple. </p>
+           </div>
+       </div>
+
+       <div class="row">
+        <!-- <div class="col-xs-12 col-sm-offset-1"><h2>Recent</h2></div> -->
+        <a href="produce/" class="noLinkSym">
+            <div class="entry col-md-4 col-xs-6">
+               <img src="images/produceThumb.png"/>
+               <h4>Produce</h4>
+               <div>2019/6/23</div>
+               <div class="platform">HTML5</div>
+           </div>
+       </a>
+       <a href="http://principleformac.com" class="noLinkSym">
+        <div class="entry col-md-4 col-xs-6">
+           <img src="images/principleThumb.jpg"/>
+           <h4>Principle</h4>
+           <div>2015</div>
+           <div class="platform">macOS</div>
+       </div>
+   </a>
+   <a href="greenline/" class="noLinkSym">
+        <div class="entry col-md-4 col-xs-6">
+           <img src="images/greenlineThumb.png"/>
+           <h4>Green Line</h4>
+           <div>2014</div>
+           <div class="platform">HTML5</div>
+       </div>
+   </a>
+
+   <a href="codebook/" class="noLinkSym">
+        <div class="entry col-md-4 col-xs-6">
+           <img src="images/codebookThumb.png"/>
+           <h4>Codebook</h4>
+           <div>2012</div>
+           <div class="platform">HTML5</div>
+       </div>
+   </a>
+
+   <a href="https://youtu.be/RGQTaHGQ04Q" class="noLinkSym">
+        <div class="entry col-md-4 col-xs-6">
+           <img src="images/keyboardThumb.png"/>
+           <h4>iPad Keyboard</h4>
+           <div>2012</div>
+           <div class="platform">iOS</div>
+       </div>
+   </a>
+
+
+
+       <a href="https://apps.apple.com/us/app/percepto/id419502225" class="noLinkSym">
+        <div class="entry col-md-4 col-xs-6">
+           <img src="images/perceptoThumb.jpg"/>
+           <h4>Percepto</h4>
+           <div>2011</div>
+           <div class="platform">iOS</div>
+       </div>
+   </a>
+</div>
+</div>
+
+<div class="container mb">
+    <div class="row">
+       <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
+           <h3>Favorite Books</h3>
+           <p>These books deeply influenced my work and I hope more people read them. (In no&nbsp;particular&nbsp;order)</p>
+
            <ul class="spacedList">
-            <li><a href="http://edithfinch.com">What Remains of Edith Finch</a></li>
-            <li><a href="https://www.stephenssausageroll.com">Steven's Sausage Roll</a></li>
-            <li><a href="http://the-witness.net">The Witness</a></li>
-            <li><a href="https://playdead.com/games/inside/">Inside</a></li>
-            <li><a href="https://thelettervsixtim.es">VVVVVV</a></li>
-            <li><a href="https://www.amazon.com/dp/B00002STXN">Zelda: A Link to The Past</a></li>
-            <li><a href="http://fezgame.com">Fez</a></li>
-            <li><a href="http://www.zachtronics.com/tis-100/">TIS-100</a></li>
-            <li><a href="https://store.steampowered.com/app/400/Portal/">Portal</a></li>
-            <li><a href="http://braid-game.com">Braid</a></li>
+            <li><a href="https://www.amazon.com/dp/9332573905"><book>Computer Systems: A Programmers Perspective 3rd Ed.</book></a> By Randal&nbsp;Bryant and David&nbsp;O'Hallaron</li>
+            <li><a href="http://amazon.com/dp/0262011530"><book>Structure and Interpretation of Computer Programs 2nd Ed.</book></a> By Harold&nbsp;Abelson and Gerald&nbsp;Jay&nbsp;Sussman</li>
+            <li><a href="http://amazon.com/dp/0961392142"><book>The Visual Display of Quantitative Information</book></a> By Edward&nbsp;R.&nbsp;Tufte</li>
+            <li><a href="https://www.amazon.com/dp/006097625X"><book>Understanding Comics: The Invisible Art</book></a> By Scott&nbsp;McCloud</li>
+            <li><a href="https://www.amazon.com/dp/9056995006"><book>The Art of Doing Science and Engineering</book></a> By Richard&nbsp;W.&nbsp;Hamming</li>
+            <li><a href="https://www.amazon.com/dp/0262560992"><book>The Little Schemer</book></a> By Daniel P. Friedman and Matthias&nbsp;Felleisen</li>
+            <li><a href="https://www.amazon.com/dp/086547897X"><book>The Animator's Survival Kit</book></a> By Richard&nbsp;Williams</li>
+            <li><a href="https://www.amazon.com/dp/1118766571"><book>About Face: The Essentials of Interaction Design</book></a> By&nbsp;Alan&nbsp;Cooper</li>
+            <li><a href="https://www.amazon.com/dp/0262640686"><book>The Elements of Computing Systems</book></a> by Noam&nbsp;Nisan</li>
+            <li><a href="https://www.amazon.com/dp/0060850523"><book>Brave New World</book></a> By Aldous Huxley</li>
+            <li><a href="https://practicaltypography.com"><book>Butterick's Practical Typography</book></a> By Matthew&nbsp;Butterick</li>
+            <li><a href="http://amazon.com/dp/0672326140"><book>The Inmates are Running the Asylum</book></a> By Alan&nbsp;Cooper</li>
+            <li><a href="http://amazon.com/dp/0201379376"><book>The Humane Interface</book></a> By Jef Raskin</li>
+            <li><a href="https://www.amazon.com/dp/0782115381"><book>The Elements of Friendly Software Design</book></a> By Paul&nbsp;Heckel</li>
         </ul>
     </div>
+    <div class="col-xs-12 col-sm-10 col-sm-push-1"> 
+     <h3>Favorite Experiences</h3>
+     <ul class="spacedList">
+        <li><a href="http://edithfinch.com">What Remains of Edith Finch</a></li>
+        <li><a href="https://www.stephenssausageroll.com">Steven's Sausage Roll</a></li>
+        <li><a href="http://the-witness.net">The Witness</a></li>
+        <li><a href="https://playdead.com/games/inside/">Inside</a></li>
+        <li><a href="https://thelettervsixtim.es">VVVVVV</a></li>
+        <li><a href="https://www.amazon.com/dp/B00002STXN">Zelda: A Link to The Past</a></li>
+        <li><a href="http://fezgame.com">Fez</a></li>
+        <li><a href="http://www.zachtronics.com/tis-100/">TIS-100</a></li>
+        <li><a href="https://store.steampowered.com/app/400/Portal/">Portal</a></li>
+        <li><a href="http://braid-game.com">Braid</a></li>
+    </ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 
